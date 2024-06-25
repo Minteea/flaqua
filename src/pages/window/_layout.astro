@@ -1,0 +1,54 @@
+---
+import BaseLayout from "../_layout.astro";
+---
+
+<BaseLayout>
+  <div id="scene" data-scene={"0"}>
+    <slot />
+  </div>
+</BaseLayout>
+
+<style is:global>
+  :root {
+    --font: "Gotham Pro", "Source Han Sans SC", sans-serif;
+    --background: aqua;
+    --foreground: black;
+    --content-bg: #ffffff80;
+  }
+
+  #scene {
+    font-family: var(--font);
+    width: 1920px;
+    height: 1080px;
+    background: var(--background);
+    color: var(--foreground);
+  }
+</style>
+
+<script>
+  import { bindStore } from "@/scripts/flaquaApi";
+  import {
+    background,
+    contentBg,
+    foreground,
+    store,
+    sceneStyle,
+  } from "./_store";
+
+  bindStore(store);
+
+  const scene = document.getElementById("scene");
+
+  background.subscribe((val) => {
+    scene.style.setProperty("--background", val);
+  });
+  foreground.subscribe((val) => {
+    scene.style.setProperty("--foreground", val);
+  });
+  contentBg.subscribe((val) => {
+    scene.style.setProperty("--content-bg", val);
+  });
+  sceneStyle.subscribe((val) => {
+    scene.setAttribute("data-style", val);
+  });
+</script>

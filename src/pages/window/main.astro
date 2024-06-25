@@ -1,0 +1,148 @@
+---
+import Layout from "./_layout.astro";
+import { TopInfo, BottomInfo, TimeLabel } from "./_widgets";
+import WindowBox from "./_components/WindowBox.astro";
+---
+
+<Layout>
+  <div id="wrap">
+    <div id="top" class="box">
+      <TopInfo client:only />
+    </div>
+    <div id="center">
+      <div id="main" class="box"></div>
+      <div id="side">
+        <div id="comments" class="box">
+          <WindowBox />
+        </div>
+      </div>
+    </div>
+    <div id="tips">
+      <div id="tips-game" class="tips-info">游戏名 | 糖豆人</div>
+      <div id="tips-music" class="tips-info">
+        正在播放 | Never Gonna Give You Up - Rick Astley
+      </div>
+    </div>
+    <div id="bottom" class="box">
+      <div id="time"><TimeLabel client:only /></div>
+      <div id="bottom-info">
+        <BottomInfo client:only />
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<style is:global>
+  #wrap {
+    padding: 10px;
+  }
+
+  #top {
+    display: flex;
+    align-items: center;
+    height: 40px;
+    padding-left: 20px;
+    margin-bottom: 10px;
+    font-size: 20px;
+    line-height: 50px;
+  }
+
+  #center {
+    display: flex;
+    gap: 10px;
+  }
+
+  #main {
+    width: 1600px;
+    height: 900px;
+    flex-shrink: 0;
+  }
+
+  #side {
+    flex-grow: 1;
+  }
+
+  #comments {
+    flex-grow: 1;
+    height: 50%;
+  }
+
+  #tips {
+    display: flex;
+    height: 40px;
+    gap: 20px;
+    margin-top: 10px;
+  }
+
+  .tips-info {
+    flex-shrink: 0;
+    height: 100%;
+    font-size: 24px;
+    line-height: 40px;
+    padding: 0 10px;
+  }
+  #tips-game {
+    width: 400px;
+  }
+  #tips-music {
+    min-width: 800px;
+  }
+
+  #bottom {
+    display: flex;
+    margin-top: 20px;
+    height: 50px;
+    font-size: 32px;
+    font-weight: 600;
+  }
+
+  #time {
+    flex-shrink: 0;
+    width: 180px;
+    height: 100%;
+    line-height: 50px;
+    text-align: center;
+  }
+
+  #bottom-info {
+    flex-grow: 1;
+    height: 100%;
+  }
+  #bottom-info .marquee-item::after {
+    content: "／";
+    display: inline-block;
+    padding: 0 10px;
+  }
+
+  .box,
+  .tips-info {
+    background: var(--content-bg);
+  }
+  #scene[data-style="shade"] .box {
+    box-shadow: 8px 8px #20202014;
+  }
+
+  .carousel-content {
+    position: absolute;
+  }
+  .carousel-content-enter {
+    animation: 0.5s ease forwards carousel-enter;
+  }
+  .carousel-content-leave {
+    animation: 0.5s ease forwards carousel-leave;
+  }
+
+  @keyframes carousel-enter {
+    from {
+      transform: translateY(100%);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+  @keyframes carousel-leave {
+    to {
+      transform: translateY(-100%);
+    }
+  }
+</style>

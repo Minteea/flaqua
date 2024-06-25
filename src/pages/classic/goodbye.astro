@@ -1,0 +1,49 @@
+---
+import { Marquee } from "@/components/Marquee";
+import Layout from "./_layout.astro";
+import { GoodbyeInfo } from "./_widgets";
+---
+
+<Layout>
+  <div class="loading-bg-marquee" style={{ width: "100%" }}>
+    <div class="loading-bg-marquee-item" style={{ width: "100%" }}>
+      <Marquee speed={50} list={["GOODBYE"]} client:load />
+    </div>
+    <div class="loading-bg-marquee-item" style={{ width: "100%" }}>
+      <Marquee speed={-40} list={["GOODBYE"]} client:load />
+    </div>
+    <div class="loading-bg-marquee-item" style={{ width: "100%" }}>
+      <Marquee speed={30} list={["GOODBYE"]} client:load />
+    </div>
+  </div>
+  <div class="loading-info" style={{ width: "100%" }}>
+    <GoodbyeInfo client:only />
+  </div>
+</Layout>
+
+<style is:global>
+  .loading-bg-marquee {
+    position: absolute;
+    font-size: 420px;
+    height: 100%;
+    font-weight: 900;
+    font-style: italic;
+    bottom: 0;
+    color: var(--content-bg);
+  }
+  .loading-bg-marquee-item {
+    height: 350px;
+  }
+  .loading-info {
+    position: absolute;
+    height: 50px;
+    font-size: 40px;
+    font-weight: 600;
+    bottom: 0;
+  }
+  .loading-info .marquee-item::after {
+    content: "／";
+    display: inline-block;
+    padding: 0 10px;
+  }
+</style>

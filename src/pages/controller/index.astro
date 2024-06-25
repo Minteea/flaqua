@@ -1,0 +1,58 @@
+---
+import Controller from "./_controller/controller";
+---
+
+<html>
+  <body>
+    <Controller client:only />
+  </body>
+</html>
+<script>
+  import type {
+    FlaquaInitEvent,
+    FlaquaUpdateEvent,
+  } from "@/scripts/flaquaEvents";
+  import { currentGroup, generateData, readStorage } from "./_controller/store";
+  const channel = new BroadcastChannel("flaqua");
+  window.addEventListener("flaqua:update", (e: FlaquaUpdateEvent) => {
+    channel.postMessage({ command: "update", key: e.key, value: e.value });
+  });
+  window.addEventListener("flaqua:init", (e: FlaquaInitEvent) => {
+    channel.postMessage({ command: "init", data: e.data });
+  });
+  channel.addEventListener("message", (e) => {
+    console.log(e);
+    if (e.data.command == "request") {
+      const group = currentGroup.value;
+      group &&
+        channel.postMessage({
+          command: "init",
+          data: generateData(group.list.value),
+        });
+    }
+  });
+  readStorage();
+</script>
+<style is:global>
+  .group {
+    padding: 4px;
+    border: 1px solid black;
+    margin-bottom: 10px;
+  }
+  .control {
+    border-bottom: 1px solid black;
+    padding: 4px 0;
+  }
+  .group-header {
+    padding-bottom: 4px;
+    display: flex;
+    border-bottom: 1px solid black;
+  }
+  .group-header input[type="text"] {
+    flex-grow: 1;
+    width: 100px;
+  }
+  .group-header button {
+    flex-shrink: 0;
+  }
+</style>

@@ -1,0 +1,41 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
+
+<script>
+  import "@/scripts/broadcastApi";
+  import { initRequest } from "@/scripts/broadcastApi";
+  import { initStore, setValue, onBindStore } from "@/scripts/flaquaApi";
+  import type {
+    FlaquaUpdateEvent,
+    FlaquaInitEvent,
+  } from "@/scripts/flaquaEvents";
+  // 监听tuna
+  import { tunaListen } from "@/scripts/tuna";
+  tunaListen();
+
+  window.addEventListener("flaqua:init", (e: FlaquaInitEvent) => {
+    console.log("flaqua:init");
+    console.log(e.data);
+    initStore(e.data);
+  });
+  window.addEventListener("flaqua:update", (e: FlaquaUpdateEvent) => {
+    console.log("flaqua:update" + ` ${e.key}`);
+    console.log(e.value);
+    setValue(e.key, e.value);
+  });
+
+  onBindStore(() => initRequest());
+</script>
+
+<style is:global>
+  body {
+    margin: 0;
+  }
+</style>

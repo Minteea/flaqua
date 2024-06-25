@@ -1,0 +1,38 @@
+//--- 2023暑假主题 ---//
+
+/** 青色 */
+#scene[data-theme="2023aqua"] {
+  --background: aqua;
+  --foreground: black;
+  --content-bg: #ffffff80;
+}
+
+/** 晚间 */
+#scene[data-theme="2023evening"] {
+  --background: linear-gradient(#6919eb, #b26af1);
+  --foreground: black;
+  --content-bg: #ffffff80;
+}
+
+/** 黄色 */
+#scene[data-theme="2023yellow"] {
+  --background: linear-gradient(-45deg, gold, orange);
+  --foreground: black;
+  --content-bg: #ffffff80;
+}
+
+/** 白熊 */
+#scene[data-theme="2023whitebear"] {
+  --background: linear-gradient(45deg, #fec9c5, #eff0f4);
+  --foreground: black;
+  --content-bg: #ffffff80;
+}
+
+//--- 2023暑假游戏主题 ---//
+
+/** 糖豆人ss4 */
+#scene[data-theme="fgss4"] {
+  --background: linear-gradient(#c797f2, #10c8fd);
+  --foreground: black;
+  --content-bg: #ffffff80;
+}

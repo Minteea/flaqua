@@ -1,0 +1,134 @@
+//--- 2024寒假主题 ---//
+
+/** 冬季 */
+#scene[data-theme="2024winter"] {
+  --background: #bcf4fa;
+  --foreground: black;
+  --content-bg: #ffffff80;
+}
+
+/** 摸鱼 */
+#scene[data-theme="2024fishing"] {
+  --background: #daf5ff;
+  --foreground: #ffacac;
+  --content-bg: #ffffff80;
+  .box {
+    box-shadow: 8px 8px #20202014;
+  }
+}
+
+/** 夜间 */
+#scene[data-theme="2024night"] {
+  --background: #41478c;
+  --foreground: #fff088;
+  --content-bg: #9f88a9a0;
+  .box {
+    box-shadow: 8px 8px #20202014;
+  }
+}
+
+/** 黄色 */
+#scene[data-theme="2024yellow"] {
+  --background: #fbffb9;
+  --foreground: #754f44;
+  --content-bg: #fdd69280;
+  .box {
+    box-shadow: 8px 8px #20202014;
+  }
+}
+
+/** 龙年 */
+#scene[data-theme="2024dragon"] {
+  --background: #eb7c6e;
+  --foreground: #754f44;
+  --content-bg: #70e1ce;
+  .box {
+    box-shadow: 8px 8px #20202014;
+  }
+}
+
+/** 春节 */
+#scene[data-theme="2024newyear"] {
+  --background: #f7f5f0;
+  --foreground: #850000;
+  --content-bg: #ffd2cc;
+  .box {
+    box-shadow: 8px 8px #20202014;
+  }
+}
+
+//--- 2024寒假游戏主题 ---//
+
+/** 过街警卫 */
+#scene[data-theme="crossing"] {
+  --background: #fff15b;
+  --foreground: #6f6f6f;
+  --content-bg: #ffffff80;
+}
+
+//--- 2024暑假主题 ---//
+
+/** 夏季 */
+#scene[data-theme="2024summer"] {
+  --background: #ffffdc;
+  --foreground: #127aaf;
+  --content-bg: #fef8e0;
+  .box {
+    box-sizing: border-box;
+  }
+  #top,
+  #main,
+  #comments,
+  #streamer,
+  #bottom-info {
+    box-sizing: border-box;
+    border: 2px solid #59c1c2;
+    box-shadow: -5px 5px #ffdf86;
+  }
+  #time {
+    background-color: #127aaf;
+    color: #fef8e0;
+    box-shadow: -5px 5px #fccf50;
+  }
+  #bottom-info {
+    background-color: #59c1c2;
+    color: #fef8e0;
+    box-shadow: -5px 5px #fccf50;
+  }
+  .loading-bg-marquee-item {
+    color: #fccf50;
+  }
+}
+
+/** Cyber */
+#scene[data-theme="2024cyber"] {
+  --background: linear-gradient(#341677, #602080);
+  --foreground: #ffd700;
+  --content-bg: #ffffff40;
+  .box {
+    box-sizing: border-box;
+  }
+  #top,
+  #main,
+  #comments,
+  #streamer,
+  #bottom-info {
+    box-sizing: border-box;
+    border: 2px solid #ffd700;
+    box-shadow: -5px 5px #ee7972;
+  }
+  #time {
+    background-color: #ee7972;
+    color: #fef8e0;
+    box-shadow: -5px 5px #59c1c2;
+  }
+  #bottom-info {
+    background-color: #ffd700;
+    color: #602080;
+    box-shadow: -5px 5px #59c1c2;
+  }
+  .loading-bg-marquee-item {
+    -webkit-text-stroke: 4px #ffd70080;
+    // color: #ffd700;
+  }
+}

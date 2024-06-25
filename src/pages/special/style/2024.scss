@@ -1,0 +1,31 @@
+//--- 2024寒假游戏主题 ---//
+
+/** 过街警卫 */
+#scene[data-theme="crossing"] {
+  --font: "Zpix";
+  --background: #6f6f6f;
+  --foreground: white;
+  --window-color: #fff15b;
+  --window-text-color: #6f6f6f;
+  --scene-background: url("/2024/Crossing Guard Joe/cover.png");
+}
+
+/** 我的小鲨鱼 */
+#scene[data-theme="shark"] {
+  --font: "Zpix";
+  --background: black;
+  --foreground: #ba5049;
+  --window-color: #ffd469;
+  --window-text-color: #ba5049;
+  --scene-background: url("/2024/我的小鲨鱼/cover.png");
+}
+
+/** 风来之国海鸥镇 */
+#scene[data-theme="octopia"] {
+  --font: "Zpix";
+  --background: #1a1d26;
+  --foreground: #717095;
+  --window-color: #ffec93;
+  --window-text-color: #43a5ff;
+  --scene-background: url("/2024/Octopia/cover.png");
+}

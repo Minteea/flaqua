@@ -1,0 +1,61 @@
+---
+import BaseLayout from "../_layout.astro";
+import "./style/2023.scss";
+import "./style/2024.scss";
+---
+
+<BaseLayout>
+  <div id="scene" data-theme={"0"} data-style={"0"}>
+    <slot />
+  </div>
+</BaseLayout>
+
+<style is:global>
+  :root {
+    --font: "Gotham Pro", "Source Han Sans SC", sans-serif;
+    --background: aqua;
+    --foreground: black;
+    --content-bg: #ffffff80;
+  }
+
+  #scene {
+    font-family: var(--font);
+    width: 1920px;
+    height: 1080px;
+    background: var(--background);
+    color: var(--foreground);
+  }
+</style>
+
+<script>
+  import { bindStore } from "@/scripts/flaquaApi";
+  import {
+    background,
+    contentBg,
+    foreground,
+    store,
+    sceneStyle,
+    sceneTheme,
+  } from "./_store";
+
+  bindStore(store);
+
+  const scene = document.getElementById("scene");
+  const body = document.body;
+
+  background.subscribe((val) => {
+    body.style.setProperty("--background", val);
+  });
+  foreground.subscribe((val) => {
+    body.style.setProperty("--foreground", val);
+  });
+  contentBg.subscribe((val) => {
+    body.style.setProperty("--content-bg", val);
+  });
+  sceneStyle.subscribe((val) => {
+    scene.setAttribute("data-style", val);
+  });
+  sceneTheme.subscribe((val) => {
+    scene.setAttribute("data-theme", val);
+  });
+</script>

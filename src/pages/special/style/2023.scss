@@ -1,0 +1,22 @@
+//--- 2023暑假游戏主题 ---//
+
+/** 糖豆人ss4 */
+#scene[data-theme="fgss4"] {
+  --background: linear-gradient(#c797f2, #10c8fd);
+  --foreground: black;
+}
+
+/** 无尽旅图 */
+#scene[data-theme="carto"] {
+  --background: url("/2023/carto/background.webp");
+  --foreground: #fff;
+  --scene-background: url("/2023/carto/art-01.jpg");
+}
+
+/** 风来之国 */
+#scene[data-theme="eastward"] {
+  --font: "Zpix";
+  --background: #1a1d26;
+  --foreground: #717095;
+  --scene-background: url("/2023/eastward/art-01.webp");
+}
