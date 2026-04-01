@@ -9,6 +9,9 @@ export const bottomSpeed = atom(50);
 /** 底栏内容 */
 export const bottomContent = atom([]);
 
+/** 直播内容 */
+export const liveContent = atom("");
+
 /** 背景 */
 export const background = atom("");
 /** 内容背景 */
@@ -49,4 +52,5 @@ export const store = {
   foreground,
   sceneStyle,
   sceneTheme,
+  liveContent,
 };

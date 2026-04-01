@@ -1,0 +1,29 @@
+.bgmodule-bubbleflow-background {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* z-index: 1; */
+  overflow: hidden;
+}
+
+.bgmodule-bubbleflow-item {
+  position: absolute;
+  border-radius: 50%;
+  width: calc(var(--radius) * 2);
+  height: calc(var(--radius) * 2);
+  left: calc(var(--radius) * -2);
+  animation: bgmodule-bubbleflow-moveRight var(--duration) linear forwards;
+  opacity: calc(var(--opacity) * var(--bgmodule-base-opacity, 1));
+  background-color: color-mix(in hsl, var(--bgmodule-color, white) var(--rn-color), var(--bgmodule-color-base, white));
+}
+
+@keyframes bgmodule-bubbleflow-moveRight {
+  from {
+    left: calc(var(--radius) * -2);
+  }
+  to {
+    left: 100vw;
+  }
+}

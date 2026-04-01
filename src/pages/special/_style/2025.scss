@@ -1,0 +1,40 @@
+@import "./font.css";
+
+//--- 2025寒假游戏主题 ---//
+
+/** 黄油猫 */
+#scene[data-theme="cato"] {
+  --font: "ark-pixel-12px-proportional-zh_cn",
+    "fusion-pixel-12px-proportional-zh_hans", "Zpix";
+  --background: #3f3e4c;
+  --foreground: #fec202;
+  --scene-background: url("/2025/Cato/cover-bg.png");
+  --scene-background-fore: url("/2025/Cato/cover-fg.png");
+  --logo-image: url("/2025/Cato/logo.svg") 10px top / auto 48px;
+}
+
+/** 文字游戏 */
+#scene[data-theme="word-game"] {
+  --font: "Zpix";
+  --background: #101010;
+  --foreground: #808080;
+  --scene-background: url("/2025/WordGame/cover.png");
+  --logo-image: url("/2025/WordGame/logo-mini.png") 10px top / auto 48px;
+  .loading-info {
+    color: #ffffff;
+  }
+}
+
+/** 文字游戏 */
+#scene[data-theme="melatonin"] {
+  --background: #171318;
+  --foreground: #a67fa7;
+  --scene-background: url("/2025/Melatonin/cover.png");
+  --logo-image: url("/2025/Melatonin/logo.png") left -54px / auto 150px;
+  .loading-info {
+    background-color: white;
+    border-top: 2px solid #a67fa7;
+    text-shadow: none;
+    height: 75px;
+  }
+}

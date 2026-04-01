@@ -20,9 +20,11 @@ export const sceneStyle = atom("");
 /** 主题 */
 export const sceneTheme = atom("");
 
+const urlInfo = new URL(location.href).searchParams.get("info");
+
 /** 加载信息 */
 export const loadingInfo = atom([
-  "主播准备中，请稍等(￣▽￣)",
+  urlInfo || "主播准备中，请稍等(￣▽￣)",
   () =>
     window.tuna?.status_id === 0
       ? `正在播放：${window.tuna?.title} - ${window.tuna?.artists?.join("/")}`
@@ -31,7 +33,7 @@ export const loadingInfo = atom([
 
 /** 结束信息 */
 export const goodbyeInfo = atom([
-  "主播下播啦，感谢观看( · w · )",
+  urlInfo || "主播下播啦，感谢观看( · w · )",
   () =>
     window.tuna?.status_id === 0
       ? `正在播放：${window.tuna?.title} - ${window.tuna?.artists?.join("/")}`

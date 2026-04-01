@@ -1,0 +1,27 @@
+.bgmodule-parallelogram-background {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* z-index: 1; */
+  overflow: hidden;
+}
+
+.bgmodule-parallelogram {
+  position: absolute;
+  height: 100%;
+  left: calc(var(--shapewidth) * -1);
+  transform: skewX(calc(-1 * var(--skew-angle)));
+  animation: bgmodule-parallelogram-moveRight var(--duration) linear forwards;
+  opacity: calc(var(--opacity) * var(--bgmodule-base-opacity, 1));
+}
+
+@keyframes bgmodule-parallelogram-moveRight {
+  from {
+    left: calc(var(--shapewidth) * -1);
+  }
+  to {
+    left: calc(100vw + var(--shapewidth));
+  }
+}

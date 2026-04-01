@@ -6,13 +6,23 @@
   "license": "MIT",
   "dependencies": {
     "@astrojs/react": "^3.0.9",
+    "@astrojs/solid-js": "^5.1.0",
+    "@iconify-json/tabler": "^1.2.19",
     "@nanostores/react": "^0.7.1",
+    "@nanostores/solid": "^1.1.1",
+    "@tabler/icons": "^3.34.0",
+    "@tabler/icons-webfont": "^3.34.1",
     "ahooks": "^3.7.8",
     "astro": "^4.1.1",
+    "clsx": "^2.1.1",
+    "dayjs": "^1.11.13",
+    "dayjs-plugin-lunar": "^1.4.1",
     "nanostores": "^0.9.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "sass": "^1.77.6",
+    "solid-js": "^1.9.8",
+    "tyme4ts": "^1.4.2",
     "use-resize-observer": "^9.1.0"
   },
   "scripts": {

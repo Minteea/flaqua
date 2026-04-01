@@ -1,7 +1,12 @@
 ---
 import Layout from "./_layout.astro";
 import { store } from "./_store";
-import { TopInfo, BottomInfo, TimeLabel } from "./_widgets";
+import {
+  TopInfo,
+  BottomInfo,
+  TimeLabel,
+  BottomContentInfo,
+} from "./_widgets/widgets.react";
 ---
 
 <Layout>
@@ -29,97 +34,103 @@ import { TopInfo, BottomInfo, TimeLabel } from "./_widgets";
         <TimeLabel client:only />
       </div>
       <div id="bottom-info">
-        <BottomInfo client:only />
+        <!--BottomInfo client:only /-->
+        <BottomContentInfo client:only />
       </div>
     </div>
-  </div>
-</Layout>
 
-<style is:global>
-  #wrap {
-  }
+    <style is:global>
+      #wrap {
+      }
 
-  #top {
-    display: flex;
-    align-items: center;
-    height: 40px;
-    padding-left: 10px;
-    font-size: 24px;
-  }
+      #top {
+        display: flex;
+        align-items: center;
+        height: 40px;
+        padding-left: 10px;
+        font-size: 24px;
+      }
 
-  #center {
-    display: flex;
-    height: 990px;
-  }
+      #center {
+        display: flex;
+        height: 990px;
+      }
 
-  #main {
-    background-color: #00000080;
-    width: 1760px;
-    height: 100%;
-    flex-shrink: 0;
-  }
+      #main {
+        background-color: #00000080;
+        width: 1760px;
+        height: 100%;
+        flex-shrink: 0;
+      }
 
-  #side {
-    flex-grow: 1;
-    height: 100%;
-  }
+      #side {
+        flex-grow: 1;
+        height: 100%;
+      }
 
-  #comments {
-    flex-grow: 1;
-    height: 50%;
-    margin-bottom: 20px;
-  }
+      #comments {
+        flex-grow: 1;
+        height: 50%;
+        margin-bottom: 20px;
+      }
 
-  #bottom {
-    display: flex;
-    gap: 20px;
-    height: 50px;
-    font-size: 32px;
-  }
+      #bottom {
+        display: flex;
+        gap: 20px;
+        height: 50px;
+        font-size: 32px;
+      }
 
-  #time {
-    flex-shrink: 0;
-    width: 180px;
-    height: 100%;
-    line-height: 50px;
-    text-align: center;
-  }
+      .bottom-content {
+        display: flex;
+        align-items: center;
+        height: 100%;
+      }
+      #time {
+        flex-shrink: 0;
+        width: 180px;
+        height: 100%;
+        line-height: 50px;
+        text-align: center;
+      }
 
-  #bottom-info {
-    flex-grow: 1;
-    height: 100%;
-  }
-  #bottom-info .marquee-item::after {
-    content: "／";
-    display: inline-block;
-    padding: 0 10px;
-  }
+      #bottom-info {
+        flex-grow: 1;
+        height: 100%;
+      }
+      #bottom-info .marquee-item::after {
+        content: "／";
+        display: inline-block;
+        padding: 0 10px;
+      }
 
-  #scene[data-style="shade"] .box {
-    box-shadow: 8px 8px #20202014;
-  }
+      #scene[data-style="shade"] .box {
+        box-shadow: 8px 8px #20202014;
+      }
 
-  .carousel-content {
-    position: absolute;
-  }
-  .carousel-content-enter {
-    animation: 0.5s ease forwards carousel-enter;
-  }
-  .carousel-content-leave {
-    animation: 0.5s ease forwards carousel-leave;
-  }
+      .carousel-content {
+        position: absolute;
+      }
+      .carousel-content-enter {
+        animation: 0.5s ease forwards carousel-enter;
+      }
+      .carousel-content-leave {
+        animation: 0.5s ease forwards carousel-leave;
+      }
 
-  @keyframes carousel-enter {
-    from {
-      transform: translateY(100%);
-    }
-    to {
-      transform: translateY(0);
-    }
-  }
-  @keyframes carousel-leave {
-    to {
-      transform: translateY(-100%);
-    }
-  }
-</style>
+      @keyframes carousel-enter {
+        from {
+          transform: translateY(100%);
+        }
+        to {
+          transform: translateY(0);
+        }
+      }
+      @keyframes carousel-leave {
+        to {
+          transform: translateY(-100%);
+        }
+      }
+    </style>
+  </div></Layout
+>

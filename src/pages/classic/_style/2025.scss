@@ -1,0 +1,149 @@
+//--- 2024寒假主题 ---//
+
+/** 冬季 */
+#scene[data-theme^="2025winter"] {
+  --background: #e3f6f5;
+  --foreground: #4c87a5;
+  --content-bg: #ffffff80;
+  .box {
+    box-sizing: border-box;
+  }
+  #top,
+  #main,
+  #comments,
+  #streamer,
+  #bottom-info {
+    box-sizing: border-box;
+    border: 2px solid #87bad2;
+    box-shadow: -5px 5px #b4d4ffa0;
+  }
+  #time {
+    background-color: #77cdff;
+    color: #f8fafc;
+    box-shadow: -5px 5px #b4d4ffa0;
+  }
+  #bottom-info {
+    // background-color: #59c1c2;
+    // color: #87bad2;
+    box-shadow: -5px 5px #b4d4ffa0;
+  }
+  .loading-bg-marquee-item {
+    //color: #fccf50;
+  }
+}
+
+/** 夜间 */
+#scene[data-theme^="2025night"] {
+  --background: linear-gradient(#2a004e, #2e5077);
+  --foreground: #79d7be;
+  --content-bg: #ffffff40;
+  .box {
+    box-sizing: border-box;
+  }
+  #top,
+  #main,
+  #comments,
+  #streamer,
+  #bottom-info {
+    box-sizing: border-box;
+    border: 2px solid #4da1a9;
+    box-shadow: -5px 5px #088395;
+  }
+  #time {
+    background-color: #4da1a9;
+    color: #ebf4f6;
+    box-shadow: -5px 5px #088395;
+  }
+  #bottom-info {
+    color: #ebf4f6;
+    box-shadow: -5px 5px #088395;
+  }
+  .loading-bg-marquee-item {
+    -webkit-text-stroke: 4px #ffffff40;
+    color: transparent;
+    &:nth-child(2) {
+      color: #ffffff40;
+      -webkit-text-stroke: 0px;
+    }
+  }
+}
+
+/** 夜间 */
+#scene[data-theme^="2025chinesenight"] {
+  --background: linear-gradient(#2a004e, #2e5077);
+  --foreground: #ff9c73;
+  --content-bg: #ffffff40;
+  .box {
+    box-sizing: border-box;
+  }
+  #top,
+  #main,
+  #comments,
+  #streamer,
+  #bottom-info {
+    box-sizing: border-box;
+    border: 2px solid #f25244;
+    box-shadow: -5px 5px #bf0b1a80;
+  }
+  #time {
+    background-color: #d93b48;
+    color: #ebf4f6;
+    box-shadow: -5px 5px #bf0b1a;
+  }
+  #bottom-info {
+    color: #ebf4f6;
+    border: 2px solid #f29727;
+    box-shadow: -5px 5px #bf0b1a;
+  }
+  .loading-bg-marquee-item {
+    -webkit-text-stroke: 4px #ffffff40;
+    color: transparent;
+    &:nth-child(2) {
+      color: #ffffff40;
+      -webkit-text-stroke: 0px;
+    }
+  }
+}
+
+/** 春节 */
+#scene[data-theme^="2025newyear"] {
+  --background: #f7f5f0;
+  --foreground: #850000;
+  --content-bg: #ffffff80;
+  .box {
+    box-sizing: border-box;
+  }
+  #top,
+  #main,
+  #comments,
+  #streamer,
+  #bottom-info {
+    box-shadow: -5px 5px #ffd2cc;
+    border: 2px solid #e69292;
+  }
+  #time {
+    background-color: #ff9c73;
+    box-shadow: -5px 5px #ffd2cc;
+    color: #f7f5f0;
+  }
+  .loading-bg-marquee-item {
+    -webkit-text-stroke: 4px #ffd2cc;
+    color: transparent;
+    &:nth-child(2) {
+      color: #ffd2cc;
+      -webkit-text-stroke: 0px;
+    }
+  }
+}
+
+#scene[data-theme$="-pixel"] {
+  --font: "Zpix", sans-serif;
+  .loading-bg-marquee {
+    font-family: "Minecraft Ten", "Source Han Sans SC", sans-serif !important;
+    font-size: 420px !important;
+    font-weight: 400;
+    .marquee-item {
+      transform: translateY(-50px);
+    }
+  }
+}

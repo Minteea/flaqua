@@ -1,0 +1,78 @@
+---
+import Layout from "./_layout.astro";
+import { GoodbyeInfo } from "./_widgets/widgets.react";
+---
+
+<Layout>
+  <div class="loading-wrap">
+    <div class="loading-text">
+      <span>GO</span>
+      <div class="mc-head">
+        <img class="mc-head-inner" src="/2024/Minecraft/head-sleep.png" />
+        <img class="mc-head-outer" src="/2024/Minecraft/head-armor.png" />
+      </div>
+      <span>DBYE.</span>
+    </div>
+  </div>
+  <div class="loading-info" style={{ width: "100%" }}>
+    <GoodbyeInfo client:only />
+  </div>
+
+  <style is:global lang="scss">
+    $size: 180px;
+    .loading-wrap {
+      display: flex;
+      width: 100%;
+      height: 100%;
+      justify-content: center;
+      align-items: center;
+    }
+    .mc-head {
+      width: $size * 0.7;
+      height: $size * 0.7;
+      position: relative;
+      margin: 0 6px;
+    }
+    .mc-dot {
+      width: $size * 0.7 * 0.3;
+      height: $size * 0.7 * 0.3;
+      margin: 0 6px;
+      image-rendering: pixelated;
+    }
+    .mc-head-outer {
+      transform: scale(112.5%);
+    }
+    .mc-head img {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      image-rendering: pixelated;
+    }
+    .loading-text {
+      font-family: "Minecraft Ten";
+      font-size: $size;
+      display: flex;
+      align-items: baseline;
+      padding-bottom: 100px;
+      padding-left: 20px;
+    }
+    .loading-info {
+      position: absolute;
+      height: 50px;
+      font-size: 40px;
+      font-weight: 600;
+      bottom: 0;
+      text-shadow: 3px 3px #40404080;
+    }
+    .loading-info .marquee-item::after {
+      content: "／";
+      display: inline-block;
+      padding: 0 10px;
+    }
+    .scene-background {
+      height: 100%;
+      background: var(--scene-background);
+      background-size: cover;
+    }
+  </style>
+</Layout>

@@ -1,5 +1,5 @@
 ---
-import Controller from "./_controller/controller";
+import Controller from "./_controller/controller.react";
 ---
 
 <html>
@@ -21,7 +21,7 @@ import Controller from "./_controller/controller";
     channel.postMessage({ command: "init", data: e.data });
   });
   channel.addEventListener("message", (e) => {
-    console.log(e);
+    // console.log(e);
     if (e.data.command == "request") {
       const group = currentGroup.value;
       group &&

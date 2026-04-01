@@ -1,0 +1,124 @@
+---
+import { Marquee } from "@/components/react/Marquee";
+import Layout from "./_layout.astro";
+import {
+  LoadingInfo,
+  NowPlaying,
+  TimeLabelMinute,
+} from "./_widgets/widgets.react";
+import MinteeaLogo25 from "./_components/MinteeaLogo25.astro";
+import AnimatedParallelogramBackground from "./_bg/Parallelogram.solid";
+import SceneThemeBgLoader from "./_bg/SceneThemeBgLoader.solid";
+---
+
+<Layout class="scene-loading">
+  <div class="loading-bg" style={{ width: "100%" }}>
+    <div class="loading-dynamic-bg">
+      <SceneThemeBgLoader client:only="solid-js" />
+    </div>
+    <div class="loading-card">
+      <div class="loading-marquee" style={{ width: "100%" }}>
+        <Marquee speed={40} list={["LOADING"]} client:load />
+      </div>
+      <div class="loading-card-top">
+        <div class="minteea-logo"><MinteeaLogo25 /><span>LIVE</span></div>
+        <div class="time-label"><TimeLabelMinute client:only /></div>
+      </div>
+      <div class="loading-text">
+        <div class="loading-text-1">主播准备中...</div>
+        <div class="loading-text-2">请稍等(￣▽￣)</div>
+      </div>
+    </div>
+  </div>
+  <div class="loading-chara"></div>
+  <div class="loading-info" style={{ width: "100%" }}>
+    <LoadingInfo client:only />
+  </div>
+
+  <style is:global lang="scss">
+    .loading-card {
+      position: absolute;
+      left: 180px;
+      right: 180px;
+      top: 120px;
+      bottom: 120px;
+    }
+    .loading-bg {
+      position: absolute;
+      height: 100%;
+    }
+    .loading-text {
+      position: absolute;
+      left: 20px;
+      bottom: 20px;
+    }
+    .loading-text-1 {
+      font-size: 72px;
+      font-weight: bold;
+    }
+    .loading-text-2 {
+      font-size: 36px;
+    }
+    .loading-marquee {
+      position: absolute;
+      top: 220px;
+      color: var(--content-bg);
+      font-weight: 900;
+      font-style: italic;
+      font-size: 420px;
+      height: 350px;
+    }
+
+    .loading-card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: top;
+      .minteea-logo {
+        display: flex;
+        align-items: center;
+        > span {
+          padding-top: 12px;
+          line-height: 84px;
+          font-size: 60px;
+          font-weight: 300;
+        }
+      }
+      .icon-minteea-logo {
+        height: 96px;
+      }
+      .time-label {
+        padding: 20px;
+        font-size: 36px;
+      }
+    }
+
+    .loading-info {
+      position: absolute;
+      display: flex;
+      justify-content: space-between;
+      height: 50px;
+      font-size: 40px;
+      bottom: 0;
+      font-weight: 600;
+    }
+
+    .loading-info .marquee-item::after {
+      content: "／";
+      display: inline-block;
+      padding: 0 10px;
+    }
+
+    .loading-chara {
+      position: absolute;
+      background-size: contain;
+    }
+
+    .loading-dynamic-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+</Layout>

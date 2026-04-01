@@ -1,37 +1,29 @@
 ---
+import VisualFrame from "./_components/VisualFrame.astro";
 import Layout from "./_layout.astro";
-import { GoodbyeInfo } from "./_widgets";
+import { GoodbyeInfo } from "./_widgets/widgets.react";
 ---
 
 <Layout>
-  <div class="window">
-    <div class="window-title">Minteea 2024</div>
-    <div class="window-content">
-      <div class="scene-background"></div>
-      <div class="loading-info" style={{ width: "100%" }}>
-        <GoodbyeInfo client:only />
-      </div>
+  <div class="special-goodbye">
+    <div class="scene-background"></div>
+    <div class="scene-frame">
+      <VisualFrame />
     </div>
+    <div class="scene-background-fore"></div>
+    <div class="loading-info" style={{ width: "100%" }}>
+      <GoodbyeInfo client:only />
+    </div>
+    <div class="scene-foreground"></div>
   </div>
 </Layout>
 
 <style is:global>
-  .window {
+  .special-goodbye {
     width: 100%;
     height: 100%;
     position: relative;
-    border: 5px solid var(--window-color, white);
     box-sizing: border-box;
-  }
-  .window-title {
-    height: 30px;
-    background-color: var(--window-color, white);
-    color: var(--window-text-color, black);
-    font-size: 20px;
-    line-height: 25px;
-  }
-  .window-content {
-    height: calc(100% - 30px);
   }
   .loading-info {
     position: absolute;
@@ -49,6 +41,22 @@ import { GoodbyeInfo } from "./_widgets";
   .scene-background {
     height: 100%;
     background: var(--scene-background);
+    background-size: cover;
+  }
+  .scene-frame,
+  .scene-background-fore,
+  .scene-foreground {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+  }
+  .scene-foreground {
+    background: var(--scene-foreground, transparent);
+    background-size: cover;
+  }
+  .scene-background-fore {
+    background: var(--scene-background-fore, transparent);
     background-size: cover;
   }
 </style>

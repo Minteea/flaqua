@@ -20,7 +20,7 @@ export function onBindStore(callback: () => void) {
 /** 初始化状态值 */
 export function initStore(values: Record<string, any>) {
   for (const key in values) {
-    setValue(key, values[key]);
+    setValue(key, values[key] ?? null);
   }
 }
 
@@ -29,10 +29,10 @@ export function setValue<T>(key: string, value: T) {
   const atom = store[key];
   if (atom) {
     atom.set(getContent(value));
-    console.log(true, key, atom);
+    // console.log(true, key, atom);
     return true;
   } else {
-    console.log(false, key);
+    // console.log(false, key);
     return false;
   }
 }

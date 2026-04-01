@@ -21,13 +21,13 @@
   tunaListen();
 
   window.addEventListener("flaqua:init", (e: FlaquaInitEvent) => {
-    console.log("flaqua:init");
-    console.log(e.data);
+    // console.log("flaqua:init");
+    // console.log(e.data);
     initStore(e.data);
   });
   window.addEventListener("flaqua:update", (e: FlaquaUpdateEvent) => {
-    console.log("flaqua:update" + ` ${e.key}`);
-    console.log(e.value);
+    // console.log("flaqua:update" + ` ${e.key}`);
+    // console.log(e.value);
     setValue(e.key, e.value);
   });
 

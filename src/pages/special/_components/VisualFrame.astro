@@ -1,0 +1,39 @@
+---
+import ForeverYoung25 from "./ForeverYoung25.astro";
+import MinteeaLogo25 from "./MinteeaLogo25.astro";
+---
+
+<div class="visual-frame">
+  <div class="visual-frame-rect">
+    <MinteeaLogo25 />
+    <ForeverYoung25 />
+  </div>
+</div>
+
+<style lang="scss" is:global>
+  .visual-frame {
+    position: relative;
+    display: none;
+    width: 100%;
+    height: 100%;
+    &-rect {
+      position: absolute;
+      left: 50px;
+      right: 40px;
+      top: 40px;
+      bottom: 40px;
+    }
+    .icon-minteea-logo {
+      position: absolute;
+      left: 0;
+      height: 80px;
+      fill: var(--foreground);
+    }
+    .icon-forever-young {
+      position: absolute;
+      right: 0;
+      height: 130px;
+      fill: var(--foreground);
+    }
+  }
+</style>

@@ -1,7 +1,8 @@
 ---
 import BaseLayout from "../_layout.astro";
-import "./style/2023.scss";
-import "./style/2024.scss";
+import "./_style/2023.scss";
+import "./_style/2024.scss";
+import "./_style/2025.scss";
 ---
 
 <BaseLayout>
@@ -17,7 +18,16 @@ import "./style/2024.scss";
     --foreground: black;
     --content-bg: #ffffff80;
   }
-
+  .loading-bg-marquee {
+    font-family: "Paris2024", "Source Han Sans SC", sans-serif !important;
+    font-size: 450px !important;
+    &-item {
+      height: 340px !important;
+      .marquee-item {
+        transform: translateY(-5px);
+      }
+    }
+  }
   #scene {
     font-family: var(--font);
     width: 1920px;
@@ -47,7 +57,7 @@ import "./style/2024.scss";
 
   (window as any).store = store;
 
-  const scene = document.getElementById("scene");
+  const scene = document.getElementById("scene")!;
 
   background.subscribe((val) => {
     scene.style.setProperty("--background", val);

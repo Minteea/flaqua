@@ -1,0 +1,283 @@
+//--- 2024寒假主题 ---//
+
+/** 冬季 */
+#scene[data-theme^="2025winter"] {
+  --background: #e3f6f5;
+  --foreground: #4c87a5;
+  --color-primary: #58a3ce;
+  --color-primary-light: #77cdff;
+  --content-bg: #ffffff40;
+  --main-bg: #ffffff60;
+  .box {
+    box-sizing: border-box;
+  }
+  #center {
+    box-shadow: 0 0 16px #b4d4ff80;
+  }
+  #main {
+    color: var(--color-primary-light);
+  }
+  #time {
+    background-color: var(--color-primary-light);
+    color: var(--background);
+  }
+  .footer-item-content i {
+    color: var(--color-primary);
+  }
+
+  #top-live,
+  #top-dots {
+    color: var(--color-primary);
+  }
+  #bottom-info {
+    color: var(--color-primary);
+  }
+  .loading-card {
+    box-sizing: border-box;
+    border: 2px solid var(--color-primary);
+    background-color: #ffffff40;
+    .minteea-logo {
+      fill: var(--foreground);
+      > span {
+        color: var(--color-primary);
+      }
+    }
+  }
+  .loading-marquee {
+    color: transparent;
+    -webkit-text-stroke: 1px var(--color-primary-light);
+  }
+  #side {
+    :where(.shape-wave) {
+      fill: white;
+    }
+    :where(.shape-ring) {
+      fill: var(--color-primary-light);
+    }
+  }
+}
+
+/** 夜间 */
+#scene[data-theme^="2025night"] {
+  --background: linear-gradient(#2a004e, #2e5077);
+  --foreground: #ebf4f6;
+  --color-primary: #79d7be;
+  --content-bg: #ffffff40;
+  --main-bg: #00000040;
+  .box {
+    box-sizing: border-box;
+  }
+  #center {
+    box-shadow: 0 0 10px #088395;
+  }
+  #main {
+    color: var(--color-primary);
+  }
+  #time {
+    background-color: #4da1a9;
+    color: var(--foreground);
+  }
+  .footer-item-content i {
+    color: var(--color-primary);
+  }
+
+  #top-info {
+    color: var(--color-primary);
+  }
+  #bottom-info {
+    color: var(--color-primary);
+  }
+  .loading-card {
+    box-sizing: border-box;
+    border: 2px solid #4da1a9;
+    background-color: #ffffff40;
+    .minteea-logo {
+      fill: var(--color-primary);
+      > span {
+        color: var(--foreground);
+      }
+    }
+  }
+  .loading-marquee {
+    color: transparent;
+    -webkit-text-stroke: 1px var(--color-primary);
+  }
+  #side {
+    :where(.shape-wave) {
+      fill: var(--color-primary);
+      opacity: 0.8;
+    }
+    :where(.shape-ring) {
+      fill: var(--foreground);
+    }
+  }
+}
+
+/** 夏季-柠檬水 */
+#scene[data-theme^="2025lemonade"] {
+  --background: #e3f6f5;
+  --foreground: #4c87a5;
+  --color-primary: #58a3ce;
+  --color-primary-light: #77cdff;
+  --content-bg: #ffffff40;
+  --main-bg: #ffffff60;
+  .box {
+    box-sizing: border-box;
+  }
+  #center {
+    box-shadow: 0 0 16px #b4d4ff80;
+  }
+  #main {
+    color: var(--color-primary-light);
+  }
+  #time {
+    background-color: var(--color-primary-light);
+    color: var(--background);
+  }
+  .footer-item-content i {
+    color: var(--color-primary);
+  }
+
+  #top-live,
+  #top-dots {
+    color: var(--color-primary);
+  }
+  #bottom-info {
+    color: var(--color-primary);
+  }
+  .loading-card {
+    box-sizing: border-box;
+    border: 2px solid var(--color-primary);
+    background-color: #ffffff40;
+    .minteea-logo {
+      fill: var(--foreground);
+      > span {
+        color: var(--color-primary);
+      }
+    }
+  }
+  .loading-marquee {
+    color: transparent;
+    -webkit-text-stroke: 1px var(--color-primary-light);
+  }
+}
+
+#scene[data-theme$="-pixel"] {
+  --font: "Zpix", sans-serif;
+  --title-font: "Minecraft Ten", "Source Han Sans SC", sans-serif !important;
+  .loading-marquee {
+    font-family: var(--title-font);
+    font-size: 420px !important;
+    font-weight: 400;
+    .marquee-item {
+      transform: translateY(-50px);
+    }
+  }
+}
+
+// --- 游戏 --- //
+
+/** 健身环 */
+#scene[data-theme="ringfit"] {
+  --background: #202020;
+  --foreground: #e0e0e0;
+  --color-primary: #ff5d0b;
+  --color-primary-light: #ff9900;
+  --content-bg: #ffffff20;
+  --main-bg: #00000040;
+  .box {
+    box-sizing: border-box;
+  }
+  #center {
+    box-shadow: 0 0 10px #00000020;
+  }
+  #main {
+    color: var(--color-primary-light);
+  }
+  #time {
+    background-color: #80808020;
+    color: var(--color-primary-light);
+  }
+  .footer-item-content i {
+    color: var(--color-primary);
+  }
+
+  #top-info {
+    color: var(--color-primary);
+  }
+  #bottom-info {
+    color: #a0a0a0a0;
+  }
+
+  .loading-bg {
+    background-color: #ffffff;
+    color: #383838;
+  }
+
+  .loading-info {
+    color: #808080;
+  }
+
+  .loading-card {
+    box-sizing: border-box;
+    border: 2px solid var(--color-primary-light);
+
+    background-color: #ffffff10;
+    .minteea-logo {
+      fill: var(--color-primary-light);
+      > span {
+        color: var(--color-primary);
+      }
+    }
+  }
+  .loading-marquee {
+    color: transparent;
+    -webkit-text-stroke: 1px var(--color-primary);
+  }
+}
+
+//--- 2024暑假游戏主题 ---//
+
+/** Minecraft */
+#scene[data-theme="minecraft"] {
+  --background: #202020;
+  --foreground: #ffffffa0;
+  --content-bg: #404040;
+  --color-primary: #1cca6af0;
+  #time {
+    color: var(--color-primary);
+    background-color: var(--content-bg);
+  }
+  .footer-item-content i {
+    color: var(--color-primary);
+  }
+  #center {
+    box-shadow: 0 0 10px #00000020;
+  }
+  #main {
+    background-color: #111111;
+    color: #ffffff10;
+  }
+}
+
+/** Minecraft Gaming */
+#scene[data-theme="minecraftgaming"] {
+  --background: #202020;
+  --foreground: #ffffffa0;
+  --content-bg: #404040;
+  --color-primary: #9500ff;
+  #time {
+    color: var(--color-primary);
+    background-color: var(--content-bg);
+  }
+  .footer-item-content i {
+    color: var(--color-primary);
+  }
+  #center {
+    box-shadow: 0 0 10px #00000020;
+  }
+  #main {
+    background-color: #111111;
+    color: #ffffff10;
+  }
+}
