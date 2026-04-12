@@ -21,3 +21,6 @@ npm run start
 - 页面框架：Astro
 - 组件支持：React
 - 样式：scss
+
+## 相关链接
+- 薄茶君的直播间：https://live.bilibili.com/24371027
