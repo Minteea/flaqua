@@ -20,11 +20,15 @@ export const liveContent = autoDefaultAtom("");
 export const liveApp = autoDefaultAtom("");
 /** 直播类型 */
 export const liveType = autoDefaultAtom("");
+/** 直播类型 */
+export const recLabel = autoDefaultAtom("LIVE");
 
 /** 开播界面卡片 */
-export const loadingCard = autoDefaultAtom(["主播准备中...", "请稍等(￣▽￣)"]);
+export const loadingTitle = autoDefaultAtom("主播准备中...");
+export const loadingSubtitle = autoDefaultAtom("请稍等(￣▽￣)");
 /** 下播界面卡片 */
-export const goodbyeCard = autoDefaultAtom(["主播下播啦", "感谢大家的支持^_^"]);
+export const goodbyeTitle = autoDefaultAtom("主播下播啦");
+export const goodbyeSubtitle = autoDefaultAtom("感谢大家的支持^_^");
 
 const urlInfo = new URL(location.href).searchParams.get("info");
 
@@ -57,8 +61,10 @@ export const store = {
   liveContent,
   liveType,
   liveApp,
-  loadingCard,
-  goodbyeCard,
+  loadingTitle,
+  loadingSubtitle,
+  goodbyeTitle,
+  goodbyeSubtitle,
   loadingInfo,
-  goodbyeInfo,
+  goodbyeInfo, recLabel
 };

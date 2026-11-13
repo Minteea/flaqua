@@ -1,4 +1,6 @@
 import { atom } from "nanostores";
+import { textNowPlaying } from "@/scripts/tuna";
+
 
 /** 顶栏切换间隔 */
 export const topInterval = atom(5000);
@@ -20,22 +22,18 @@ export const sceneStyle = atom("");
 /** 主题 */
 export const sceneTheme = atom("");
 
+const urlInfo = new URL(location.href).searchParams.get("info");
+
 /** 加载信息 */
 export const loadingInfo = atom([
-  "主播准备中，请稍等^_^",
-  () =>
-    window.tuna?.status_id === 0
-      ? `正在播放：${window.tuna?.title} - ${window.tuna?.artists?.join("/")}`
-      : null,
+  urlInfo || "主播准备中，请稍等^_^",
+  textNowPlaying,
 ]);
 
 /** 结束信息 */
 export const goodbyeInfo = atom([
-  "主播下播啦，感谢支持UwU",
-  () =>
-    window.tuna?.status_id === 0
-      ? `正在播放：${window.tuna?.title} - ${window.tuna?.artists?.join("/")}`
-      : null,
+  urlInfo || "主播下播啦，感谢支持UwU",
+  textNowPlaying,
 ]);
 
 /** 可操作store */

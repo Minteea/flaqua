@@ -1,7 +1,12 @@
 ---
 import { Marquee } from "@/components/react/Marquee";
 import Layout from "./_layout.astro";
-import { GoodbyeInfo, TimeLabelMinute } from "./_widgets/widgets.react";
+import {
+  GoodbyeInfo,
+  GoodbyeSubtitle,
+  GoodbyeTitle,
+  TimeLabelMinute,
+} from "./_widgets/widgets.react";
 import MinteeaLogo25 from "./_components/MinteeaLogo25.astro";
 import AnimatedParallelogramBackground from "./_bg/Parallelogram.solid";
 import SceneThemeBgLoader from "./_bg/SceneThemeBgLoader.solid";
@@ -21,8 +26,10 @@ import SceneThemeBgLoader from "./_bg/SceneThemeBgLoader.solid";
         <div class="time-label"><TimeLabelMinute client:only /></div>
       </div>
       <div class="loading-text">
-        <div class="loading-text-1">主播下播啦~</div>
-        <div class="loading-text-2">感谢大家的支持^_^</div>
+        <div class="loading-title"><GoodbyeTitle client:only="react" /></div>
+        <div class="loading-subtitle">
+          <GoodbyeSubtitle client:only="react" />
+        </div>
       </div>
     </div>
   </div>
@@ -49,11 +56,11 @@ import SceneThemeBgLoader from "./_bg/SceneThemeBgLoader.solid";
     left: 20px;
     bottom: 20px;
   }
-  .loading-text-1 {
+  .loading-title {
     font-size: 72px;
     font-weight: bold;
   }
-  .loading-text-2 {
+  .loading-subtitle {
     font-size: 36px;
   }
   .loading-marquee {

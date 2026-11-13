@@ -1,10 +1,9 @@
-@import "./font.css";
-
 //--- 2025寒假游戏主题 ---//
 
 /** 黄油猫 */
 #scene[data-theme="cato"] {
-  --font: "ark-pixel-12px-proportional-zh_cn",
+  --font:
+    "ark-pixel-12px-proportional-zh_cn",
     "fusion-pixel-12px-proportional-zh_hans", "Zpix";
   --background: #3f3e4c;
   --foreground: #fec202;
@@ -25,7 +24,7 @@
   }
 }
 
-/** 文字游戏 */
+/** Melatonin */
 #scene[data-theme="melatonin"] {
   --background: #171318;
   --foreground: #a67fa7;

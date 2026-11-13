@@ -36,8 +36,8 @@ export function TextCarousel({
   const currentIndex = useRef<number>(-1);
   const frozen = useRef<boolean>(false);
 
-  const parseContent = (content: string | Record<string, any>) => {
-    if (typeof content == "object") {
+  const parseContent = (content: string | Record<string, any> | null) => {
+    if (typeof content == "object" && content) {
       return customContentParser
         ? customContentParser(content)
         : (content.text as string) || "";
@@ -83,7 +83,7 @@ export function TextCarousel({
       if (frozen.current) return;
       next();
     },
-    play ? interval || null : null
+    play ? interval || null : null,
   );
 
   return (

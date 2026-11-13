@@ -19,7 +19,7 @@ export function onBindStore(callback: () => void) {
 
 /** 初始化状态值 */
 export function initStore(values: Record<string, any>) {
-  for (const key in values) {
+  for (const key in store) {
     setValue(key, values[key] ?? null);
   }
 }

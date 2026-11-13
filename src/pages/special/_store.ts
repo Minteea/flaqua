@@ -25,20 +25,13 @@ export const sceneTheme = atom("");
 
 /** 加载信息 */
 export const loadingInfo = atom([
-  "直播即将开始，请稍等^_^",
-  () =>
-    window.tuna?.status_id === 0
-      ? `正在播放：${window.tuna?.title} - ${window.tuna?.artists?.join("/")}`
-      : null,
+  "直播即将开始，请稍等^_^"
+
 ]);
 
 /** 结束信息 */
 export const goodbyeInfo = atom([
-  "今天的直播就到这里啦，感谢大家的支持UwU",
-  () =>
-    window.tuna?.status_id === 0
-      ? `正在播放：${window.tuna?.title} - ${window.tuna?.artists?.join("/")}`
-      : null,
+  "今天的直播就到这里啦，感谢大家的支持UwU"
 ]);
 
 /** 可操作store */

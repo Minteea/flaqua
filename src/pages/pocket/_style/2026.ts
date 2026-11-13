@@ -30,4 +30,51 @@ export default {
       },
     },
   },
+  "2026evening": {
+    dynamicBackground: {
+      name: "DotGrid",
+      props: {
+        xSpeed: 18,
+        ySpeed: 0,
+        spacing: 180,
+        dotDiameter: 18,
+        dotDiameter2: 12,
+        startXOffset: 40,
+        startYOffset: 10,
+      },
+    }, mainBackground: {
+      name: "DotGrid",
+      props: {
+        xSpeed: 0,
+        ySpeed: 0,
+        spacing: 180,
+        dotDiameter: 18,
+        dotDiameter2: 12,
+        startXOffset: 40,
+        startYOffset: 10,
+      },
+    },
+  },
+  "2026lemonade": {
+    dynamicBackground: {
+      name: "SquareGrid",
+      props: {
+        xSpeed: 20,
+        ySpeed: 0,
+        gridSize: 48,
+        startYOffset: 12,
+        startXOffset: 12,
+      },
+    },
+    mainBackground: {
+      name: "SquareGrid",
+      props: {
+        xSpeed: 0,
+        ySpeed: 0,
+        gridSize: 48,
+        startYOffset: 12,
+        startXOffset: 12,
+      },
+    },
+  },
 };

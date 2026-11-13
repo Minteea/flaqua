@@ -35,6 +35,11 @@ interface Props {
         background-color 0.5s;
     }
   }
+
+  .textmark-time {
+    padding-inline: 0.25em;
+    font-weight: bold;
+  }
 </style>
 
 <script>
@@ -42,9 +47,11 @@ interface Props {
   import { store, sceneTheme } from "./_store";
   import { PluginLunar } from "dayjs-plugin-lunar";
   import dayjs from "dayjs";
+  import Duration from "dayjs/plugin/duration";
 
   // 添加全局依赖
   dayjs.extend(PluginLunar);
+  dayjs.extend(Duration);
   (window as any).dayjs = dayjs;
 
   //

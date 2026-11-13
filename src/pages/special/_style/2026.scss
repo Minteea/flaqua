@@ -1,0 +1,65 @@
+/** Bits & Bops */
+#scene[data-theme="bits-and-bops"] {
+  --background: #1d1c1b;
+  --foreground: #42ccfd;
+  --scene-background: url("/2026/BitsAndBops/cover.png");
+  --logo-image: url("/2026/BitsAndBops/logo-w.png") left 0px / auto 60px;
+
+  .loading-info {
+    background-color: #ffffff;
+    border-top: 2px solid #143744;
+    text-shadow: none;
+    height: 75px;
+    // color: white;
+  }
+}
+
+/** Scritchy Scratchy */
+#scene[data-theme="scritchy-scratchy"] {
+  --font: "Zpix";
+  --background: #16171c;
+  --foreground: #617ba0;
+  --scene-background: url("/2026/ScritchyScratchy/cover.png");
+  --logo-image: url("/2026/ScritchyScratchy/logo-w.png") 10px top / auto 60px;
+  .loading-info {
+    color: #ffffff;
+  }
+}
+
+/** Plants VS Zombies */
+#scene[data-theme="plants-vs-zombies"] {
+  --font: "PvZ2 Regular By Beast and MF", "华康POP2体W9", "華康POP2體W9(P)";
+  --background: black;
+  --foreground: #949b99;
+
+  #main {
+    background-color: transparent;
+  }
+  #time {
+    width: 120px;
+  }
+  --scene-background: url("/2026/PlantsVSZombies/cover.png");
+  --logo-image: url("/2026/PlantsVSZombies/logo-w.png") 10px top / auto 34px;
+  .loading-info {
+    color: white;
+    -webkit-text-stroke: 1px #000000a0;
+  }
+}
+
+/** 节奏医生 */
+#scene[data-theme="rhythm-doctor"] {
+  --font: "04b03", "Source Han Sans SC", sans-serif;
+  --background: black;
+  --foreground: #808080;
+
+  font-weight: 500;
+  #main {
+    background-color: transparent;
+  }
+  --scene-background: url("/2026/RhythmDoctor/cover.png");
+  --logo-image: url("/2026/RhythmDoctor/logo-w.png") 10px top / auto 45px;
+  .loading-info {
+    color: white;
+    // -webkit-text-stroke: 1px #000000a0;
+  }
+}

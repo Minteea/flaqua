@@ -7,7 +7,8 @@ import DynamicBackgroundLoader from "./loader.solid";
 
 const themeLists: {
   [name: string]: {
-    dynamicBackground: { name: string; props: Record<string, any> };
+    dynamicBackground?: { name: string; props: Record<string, any> };
+    mainBackground?: { name: string; props: Record<string, any> };
   };
 }[] = [s2026];
 
@@ -20,15 +21,30 @@ const getThemeInfo = (themeName: string) => {
   return undefined;
 };
 
-const SceneThemeBgLoader = () => {
+export const SceneThemeBgLoader = () => {
   const themeName = useStore(sceneTheme);
   const themeInfo = () => getThemeInfo(themeName());
   return (
-    <Show when={themeInfo()}>
-      {(themeInfo) => (
+    <Show when={themeInfo()?.dynamicBackground}>
+      {(dynamicBackground) => (
         <DynamicBackgroundLoader
-          componentName={themeInfo().dynamicBackground.name}
-          componentProps={themeInfo().dynamicBackground.props}
+          componentName={dynamicBackground().name}
+          componentProps={dynamicBackground().props}
+        />
+      )}
+    </Show>
+  );
+};
+
+export const MainBgLoader = () => {
+  const themeName = useStore(sceneTheme);
+  const themeInfo = () => getThemeInfo(themeName());
+  return (
+    <Show when={themeInfo()?.mainBackground}>
+      {(mainBackground) => (
+        <DynamicBackgroundLoader
+          componentName={mainBackground().name}
+          componentProps={mainBackground().props}
         />
       )}
     </Show>

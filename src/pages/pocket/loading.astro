@@ -3,6 +3,8 @@ import { Marquee } from "@/components/react/Marquee";
 import Layout from "./_layout.astro";
 import {
   LoadingInfo,
+  LoadingSubtitle,
+  LoadingTitle,
   NowPlaying,
   TimeLabelMinute,
 } from "./_widgets/widgets.react";
@@ -25,8 +27,10 @@ import SceneThemeBgLoader from "./_bg/SceneThemeBgLoader.solid";
         <div class="time-label"><TimeLabelMinute client:only /></div>
       </div>
       <div class="loading-text">
-        <div class="loading-text-1">主播准备中...</div>
-        <div class="loading-text-2">请稍等(￣▽￣)</div>
+        <div class="loading-title"><LoadingTitle client:only="react" /></div>
+        <div class="loading-subtitle">
+          <LoadingSubtitle client:only="react" />
+        </div>
       </div>
     </div>
   </div>
@@ -52,11 +56,11 @@ import SceneThemeBgLoader from "./_bg/SceneThemeBgLoader.solid";
       left: 20px;
       bottom: 20px;
     }
-    .loading-text-1 {
+    .loading-title {
       font-size: 72px;
       font-weight: bold;
     }
-    .loading-text-2 {
+    .loading-subtitle {
       font-size: 36px;
     }
     .loading-marquee {

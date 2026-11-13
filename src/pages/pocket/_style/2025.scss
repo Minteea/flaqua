@@ -266,12 +266,13 @@
   --foreground: #ffffffa0;
   --content-bg: #404040;
   --color-primary: #9500ff;
+  --color-primary-light: #df5fff;
   #time {
-    color: var(--color-primary);
-    background-color: var(--content-bg);
+    color: white;
+    background-color: var(--color-primary);
   }
   .footer-item-content i {
-    color: var(--color-primary);
+    color: var(--color-primary-light);
   }
   #center {
     box-shadow: 0 0 10px #00000020;
@@ -279,5 +280,10 @@
   #main {
     background-color: #111111;
     color: #ffffff10;
+  }
+
+  //// PATCH
+  #comments-title {
+    display: none;
   }
 }

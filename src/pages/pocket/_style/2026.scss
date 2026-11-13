@@ -179,6 +179,10 @@
   .loading-marquee {
     color: var(--color-primary-light);
   }
+  .textmark-time {
+    background-color: var(--color-primary);
+    color: var(--background);
+  }
   #side {
     :where(.shape-wave) {
       fill: #ffffce;
@@ -251,6 +255,11 @@
   }
   #top-info {
     color: var(--color-primary);
+
+    .textmark-time {
+      background-color: var(--color-primary);
+      color: #121d5d;
+    }
   }
   #bottom-info {
     color: var(--color-primary);
@@ -285,6 +294,11 @@
       fill: var(--color-custom-yellow);
     }
   }
+
+  .textmark-time {
+    background-color: var(--color-primary);
+    color: #582db0;
+  }
   .loading-chara {
     width: 600px;
     height: 1000px;
@@ -305,6 +319,273 @@
   }
 }
 
-#scene[data-theme^="2026summer"] {
-  --background: linear-gradient(#121d5d, #582db0);
+/** 原神 */
+#scene[data-theme="genshin"] {
+  --background: #20242b;
+  --foreground: #ede3d9;
+  --color-primary: #e49f3a;
+  --color-secondary: #8699ad;
+  --content-bg: #5e637260;
+  --content: #5e6372;
+  --main-bg: #00000040;
+  .box {
+    box-sizing: border-box;
+  }
+  #center {
+    box-shadow: 0 0 10px #00000020;
+  }
+  #main {
+    color: transparent;
+  }
+  #time {
+    background-color: var(--content-bg);
+    color: var(--foreground);
+  }
+  .footer-item-content i {
+    color: var(--color-primary);
+  }
+
+  #top-info {
+    color: var(--color-secondary);
+  }
+  #bottom-info {
+    color: var(--color-secondary);
+  }
+
+  .loading-bg {
+    background-color: #ffffff;
+    color: var(--content);
+  }
+
+  .loading-info {
+    color: var(--color-secondary);
+  }
+
+  .loading-card {
+    box-sizing: border-box;
+    //border: 2px solid var(--color-secondary);
+    box-shadow: 0 8px 48px #5e637220;
+
+    background-color: #ffffff10;
+    .minteea-logo {
+      fill: var(--color-secondary);
+      > span {
+        color: var(--color-primary);
+      }
+    }
+  }
+  .loading-marquee {
+    color: var(--color-secondary);
+  }
+}
+
+/** 2026夏季-柠檬水 */
+#scene[data-theme^="2026lemonade"] {
+  --background: #fefefa;
+  --foreground: #816f5b;
+  --color-primary: #4ec7ff;
+  --color-primary-light: #aff3ff;
+  --color-secondary: #ffaa00;
+  --color-secondary-light: #ffd000;
+  --content-bg: #fffffff0;
+  --main-bg: #ffffffa0;
+  .box {
+    box-sizing: border-box;
+  }
+  #footer-music {
+    // display: none;
+  }
+  #center {
+    box-shadow: 0 0 16px #b5d7ea80;
+  }
+  #main {
+    color: var(--color-primary-light);
+  }
+  #time {
+    background-color: var(--color-secondary);
+    color: var(--background);
+  }
+  .footer-item-content i {
+    color: var(--color-primary);
+  }
+
+  #top-live {
+    color: var(--color-secondary-light);
+  }
+  #top-dots {
+    span:nth-child(1) {
+      color: var(--color-primary);
+    }
+    span:nth-child(2) {
+      color: var(--color-secondary-light);
+    }
+    span:nth-child(3) {
+      color: var(--color-secondary);
+    }
+  }
+  #bottom-info {
+    color: var(--color-primary);
+    .textmark-time {
+      background-color: var(--color-primary);
+    }
+  }
+  .time-label {
+    color: var(--color-secondary);
+  }
+  .loading-card {
+    box-sizing: border-box;
+    border: 2px solid var(--color-primary-light);
+    background-color: #ffffffe0;
+    box-shadow: 0 0 16px #b5d7ea80;
+    color: var(--color-primary);
+    .minteea-logo {
+      fill: var(--foreground);
+      > span {
+        color: var(--color-primary);
+      }
+    }
+  }
+  .loading-marquee {
+    color: var(--color-secondary-light);
+  }
+  .textmark-time {
+    background-color: var(--foreground);
+    color: var(--background);
+  }
+  #side {
+    :where(.shape-wave) {
+      fill: #ffd00080;
+    }
+    :where(.shape-ring) {
+      fill: var(--color-primary);
+    }
+  }
+
+  .loading-chara {
+    width: 600px;
+    height: 1000px;
+    right: 120px;
+    bottom: -20px;
+    filter: drop-shadow(2px 2px 3px #00000040);
+  }
+  &.scene-loading .loading-chara {
+    right: 120px;
+    background-image: url("/2026/FishingSummer/Minty_pt260728.A1.E.png");
+  }
+  &.scene-goodbye .loading-chara {
+    right: 150px;
+    background-image: url("/2026/FishingSummer/Minty_pt260728.A2.E.png");
+  }
+  .bgmodule-squaregrid-line {
+    --bgmodule-color: #816f5b20;
+  }
+}
+
+/** 晚上 */
+#scene[data-theme^="2026evening"] {
+  --background: linear-gradient(#29448a, #524581);
+  --foreground: #ecebe7;
+  --color-primary: #ffdb68;
+  --color-primary-light: #ffea4c;
+  --color-secondary: #33c1ff;
+  --color-secondary-light: #59e6ff;
+  --content-bg: #00000040;
+  --main-bg: #00000080;
+  .box {
+    box-sizing: border-box;
+  }
+  #center {
+    box-shadow: 0 0 10px #114d8e;
+  }
+  #main {
+    color: var(--color-secondary);
+  }
+  #time {
+    background-color: var(--color-secondary);
+    color: var(--foreground);
+  }
+  .footer-item-content i {
+    color: var(--color-primary);
+  }
+
+  #top-live {
+    color: var(--color-primary-light);
+  }
+  #top-dots {
+    span:nth-child(1) {
+      color: var(--color-primary-light);
+    }
+    span:nth-child(2) {
+      color: var(--foreground);
+    }
+    span:nth-child(3) {
+      color: var(--color-secondary-light);
+    }
+  }
+  #top-info {
+    color: var(--foreground);
+
+    .textmark-time {
+      background-color: var(--foreground);
+      color: #29448a;
+    }
+  }
+  #bottom-info {
+    color: var(--color-primary);
+  }
+  .time-label {
+    color: var(--color-secondary-light);
+  }
+  .loading-card {
+    box-sizing: border-box;
+    border: 2px solid var(--color-secondary);
+    background-color: #20202080;
+    box-shadow: 0 0 10px #114d8e;
+    .minteea-logo {
+      fill: var(--foreground);
+      > span {
+        color: var(--color-primary);
+      }
+    }
+  }
+  .loading-info {
+    color: var(--color-secondary-light);
+  }
+  .loading-marquee {
+    color: var(--color-primary);
+  }
+  #side {
+    :where(.shape-wave) {
+      fill: var(--color-secondary);
+      // opacity: 0.8;
+    }
+    :where(.shape-ring) {
+      fill: var(--color-primary-light);
+    }
+  }
+
+  .textmark-time {
+    background-color: var(--color-primary);
+    color: #524581;
+  }
+  .loading-chara {
+    width: 600px;
+    height: 1000px;
+    right: 120px;
+    bottom: -20px;
+    filter: drop-shadow(2px 2px 3px #00000040);
+    background-repeat: no-repeat;
+  }
+  &.scene-loading .loading-chara {
+    right: 120px;
+    background-image: url("/2026/FishingSummer/Minty_pt260728.B1.E.png");
+  }
+  &.scene-goodbye .loading-chara {
+    right: 120px;
+    background-image: url("/2026/FishingSummer/Minty_pt260728.B2.E.png");
+  }
+  .bgmodule-dotgrid {
+    --bgmodule-color: #ffffff20;
+    --bgmodule-base-opacity: 0.5;
+  }
 }

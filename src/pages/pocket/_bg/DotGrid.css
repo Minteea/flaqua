@@ -1,0 +1,48 @@
+.bgmodule-dotgrid {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+
+  /* 组件通过这几个变量控制点阵整体偏移和层级倾斜。 */
+  --dot-grid-phase-x: 0px;
+  --dot-grid-phase-y: 0px;
+  --dot-grid-skew-x: 0px;
+  --dot-grid-skew-y: 0px;
+
+  /* 可由外部主题覆写：圆点颜色与透明度。 */
+  --dot-grid-dot-color: var(--bgmodule-color, #00000055);
+  --dot-grid-dot-diameter: 6px;
+  --dot-grid-dot-diameter-2: 6px;
+}
+
+.bgmodule-dotgrid-dot {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: var(--dot-grid-dot-diameter);
+  height: var(--dot-grid-dot-diameter);
+  border-radius: 50%;
+  background-color: var(--dot-grid-dot-color);
+  opacity: calc(var(--bgmodule-base-opacity, 1));
+  will-change: transform;
+
+  /*
+   * 每个点先定位在自己的格点坐标，再叠加容器相位与层级倾斜偏移。
+   * 这样可以在不重排点坐标的前提下，得到一组稳定的“斜向交错”点阵。
+   */
+  transform: translate(
+    calc(var(--dot-grid-dot-x) + var(--dot-grid-phase-x) + var(--dot-grid-skew-x) - 50%),
+    calc(var(--dot-grid-dot-y) + var(--dot-grid-phase-y) + var(--dot-grid-skew-y) - 50%)
+  );
+}
+
+.bgmodule-dotgrid-dot--offset {
+  width: var(--dot-grid-dot-diameter-2);
+  height: var(--dot-grid-dot-diameter-2);
+  background-color: transparent;
+  border: 6px solid var(--dot-grid-dot-color);
+}

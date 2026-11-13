@@ -5,6 +5,8 @@ import { Dynamic } from "solid-js/web";
 const componentList = {
   Parallelogram: lazy(() => import("./Parallelogram.solid.tsx")),
   BubbleFlow: lazy(() => import("./BubbleFlow.solid.tsx")),
+  SquareGrid: lazy(() => import("./SquareGrid.solid.tsx")),
+  DotGrid: lazy(() => import("./DotGrid.solid.tsx")),
 };
 
 type ComponentName = keyof typeof componentList;

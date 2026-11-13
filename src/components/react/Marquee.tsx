@@ -10,16 +10,25 @@ interface IKeyValue<V, K = string> {
   value: V;
   key: K;
 }
-type IMarqueeItem = ReactNode | (() => ReactNode);
+type IMarqueeItem =
+  | ReactNode
+  | Record<string, any>
+  | (() => ReactNode | Record<string, any>);
 
 export interface IMarqueeArgs {
   list: IMarqueeItem[];
   play?: boolean;
   speed: number;
+  customContentParser?: (a: Record<string, any>) => ReactNode;
 }
 
 /** 滚动文字跑马灯 */
-export function Marquee({ list, play = true, speed }: IMarqueeArgs) {
+export function Marquee({
+  list,
+  play = true,
+  speed,
+  customContentParser,
+}: IMarqueeArgs) {
   const [data, setData] = useState<IMarqueeDataItem[]>([]);
   const [offset, setOffset] = useState<number>(0);
   const count = useRef(0);
@@ -98,6 +107,14 @@ export function Marquee({ list, play = true, speed }: IMarqueeArgs) {
     setData(newList);
   };
 
+  const parseContent = (content: string | Record<string, any> | null) => {
+    if (typeof content == "object" && content) {
+      return customContentParser
+        ? customContentParser(content)
+        : (content.text as string) || "";
+    } else return content;
+  };
+
   // 检测元素是否需要填充
   useEffect(() => {
     if (frozen.current) return;
@@ -120,7 +137,9 @@ export function Marquee({ list, play = true, speed }: IMarqueeArgs) {
           lastIndex.current = 0;
         }
         item = list[lastIndex.current];
-        value = typeof item == "function" ? item() : item;
+        value = item
+          ? parseContent(typeof item == "function" ? item() : item)
+          : null;
       }
       pushItem(value);
     } else if (
@@ -145,7 +164,9 @@ export function Marquee({ list, play = true, speed }: IMarqueeArgs) {
           firstIndex.current = length - 1;
         }
         item = list[firstIndex.current];
-        value = typeof item == "function" ? item() : item;
+        value = item
+          ? parseContent(typeof item == "function" ? item() : item)
+          : null;
       }
       unshiftItem(value);
     }
@@ -168,7 +189,7 @@ export function Marquee({ list, play = true, speed }: IMarqueeArgs) {
       setOffset(
         offset +
           (firstWidth || 0) -
-          ((currentTime - timestamp.current) * speed) / 1000
+          ((currentTime - timestamp.current) * speed) / 1000,
       );
     } else if (reverse && offset - (lastWidth || 0) > 0) {
       // 检测最后一个元素是否出界
@@ -176,7 +197,7 @@ export function Marquee({ list, play = true, speed }: IMarqueeArgs) {
       setOffset(
         offset -
           (lastWidth || 0) -
-          ((currentTime - timestamp.current) * speed) / 1000
+          ((currentTime - timestamp.current) * speed) / 1000,
       );
     } else {
       setOffset(offset - ((currentTime - timestamp.current) * speed) / 1000);
